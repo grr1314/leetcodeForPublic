@@ -2,17 +2,17 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class DemoJava {
-    public static void main(final String[] args) {
-        // System.out.println("Hello World");
-        Solution66 s66 = new Solution66();
-        Solution67 s67 = new Solution67();
-        // int[] digits = { 2, 1, 9 };
-        // int[] digits = { 9, 9 };
-        // for (int i : s66.plusOne(digits)) {
-        // System.out.print(i + "");
-        // }
-        System.out.print(s67.addBinary("1", "111"));
-    }
+    // public static void main(final String[] args) {
+    // // System.out.println("Hello World");
+    // Solution66 s66 = new Solution66();
+    // Solution67 s67 = new Solution67();
+    // // int[] digits = { 2, 1, 9 };
+    // // int[] digits = { 9, 9 };
+    // // for (int i : s66.plusOne(digits)) {
+    // // System.out.print(i + "");
+    // // }
+    // System.out.print(s67.addBinary("1", "111"));
+    // }
 }
 
 /**
@@ -47,7 +47,8 @@ class Solution66 {
 }
 
 /**
- * 6
+ * 67
+ * 
  * 给你两个二进制字符串，返回它们的和（用二进制表示）。
  * 
  * 输入为 非空 字符串且只包含数字 1 和 0。
@@ -80,7 +81,7 @@ class Solution67 {
             }
             for (int i = 0; i < b.length(); i++) {
                 char c1 = b.charAt(i);
-                bArray[p] =  Integer.parseInt(String.valueOf(c1));
+                bArray[p] = Integer.parseInt(String.valueOf(c1));
                 p++;
             }
             for (int k = 0; k < maxLength; k++) {
@@ -168,5 +169,59 @@ class Solution67 {
 
         }
         return resultString;
+    }
+}
+
+/**
+ * 20 有效的括号
+ * 
+ * 
+ * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
+ * 
+ * 有效字符串需满足：
+ * 
+ * 左括号必须用相同类型的右括号闭合。 左括号必须以正确的顺序闭合。 注意空字符串可被认为是有效字符串。
+ * 
+ * 示例 1:
+ * 
+ * 输入: "()" 输出: true 示例 2:
+ *
+ * 输入: "()[]{}" 输出: true 示例 3:
+ * 
+ * 输入: "(]" 输出: false 示例 4:
+ * 
+ * 输入: "([)]" 输出: false 示例 5:
+ * 
+ * 输入: "{[]}" 输出: true
+ */
+class Solution20 {
+    public boolean isValid(String s) {
+        if (s == null || s.isEmpty() || s.length() % 2 > 0) {
+            return false;
+        }
+        
+        boolean result = true;
+        for (int i = 0; i < s.length(); i++) {
+            if (i % 2 == 1) {
+                int n=s.charAt(i)==41 ? 1: 2;
+                    if (s.charAt(i - 1) != s.charAt(i) - n) {
+                      
+                        result = false;
+                        break;
+                    }
+                
+            }
+        }
+        if (!result) {
+            for (int index = 0; index < s.length() / 2; index++) {
+                result = true;
+                int n=s.charAt(s.length() - 1 - index)==41 ? 1: 2;
+                if (s.charAt(index) != s.charAt(s.length() - 1 - index) - n) {
+                    result = false;
+                    break;
+                }
+            }
+        }
+        return result;
     }
 }

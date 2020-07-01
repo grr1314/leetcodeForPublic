@@ -33,8 +33,11 @@ public class Main {
           int[][] a = {{0,1,0},{0,1,0}};
 //        int[][] a = {{1,0},{0,0}};
 //        int[][] a = {{0,1},{0,0},{0,0}};
-        Solution63 solution63 = new Solution63();
-        int s = solution63.uniquePathsWithObstacles(a);
-        System.out.print(s);
+        // Solution63 solution63 = new Solution63();
+        // int s = solution63.uniquePathsWithObstacles(a);
+        // System.out.print(s);
+        Solution20 solution20=new Solution20();
+        // solution20.isValid("{[]}");
+        System.out.println(solution20.isValid("(([]){})"));
     }
 }
