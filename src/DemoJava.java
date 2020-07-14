@@ -1,5 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class DemoJava {
     // public static void main(final String[] args) {
@@ -196,32 +197,51 @@ class Solution67 {
  */
 class Solution20 {
     public boolean isValid(String s) {
-        if (s == null || s.isEmpty() || s.length() % 2 > 0) {
+        if (s == null || s.length() % 2 > 0) {
             return false;
         }
-        
-        boolean result = true;
+        // 栈？自己没写出来不过看了别人题解得到一定的思路
+        LinkedList<Character> linkedList = new LinkedList<Character>();
+        // stack.pop();出栈
+        // stack.push(e);压栈
+        // stack.size();栈的长度
+        // stack.peekLast();获取栈底元素
+        // stack.peekFirst();获取栈顶元素
+        // 本例中所有字符的ascii码
+        // （） 40 41 [] 91 93 {} 123 125
         for (int i = 0; i < s.length(); i++) {
-            if (i % 2 == 1) {
-                int n=s.charAt(i)==41 ? 1: 2;
-                    if (s.charAt(i - 1) != s.charAt(i) - n) {
-                      
-                        result = false;
-                        break;
+            char c = s.charAt(i);
+            switch (c) {
+                case 41: {
+                    if (linkedList.peekFirst()!=null&&c == linkedList.peekFirst() + 1) {
+                        linkedList.pop();
+                    } else {
+                        linkedList.push(c);
                     }
-                
-            }
-        }
-        if (!result) {
-            for (int index = 0; index < s.length() / 2; index++) {
-                result = true;
-                int n=s.charAt(s.length() - 1 - index)==41 ? 1: 2;
-                if (s.charAt(index) != s.charAt(s.length() - 1 - index) - n) {
-                    result = false;
-                    break;
                 }
+                    break;
+                case 93:
+                case 125: {
+                    // peekFirst获取的是栈顶的元素peekLast获取的是栈底的元素，之前写错是因为这两个概念没有搞明白
+                    if (linkedList.peekFirst()!=null&&c == linkedList.peekFirst() + 2) {
+                        linkedList.pop();
+                    } else {
+                        linkedList.push(c);
+                    }
+                }
+                    break;
+                default: {
+                    System.out.println(c);
+                    linkedList.push(c);
+                }
+                    break;
             }
         }
-        return result;
+        if (linkedList.peekLast() != null) {
+            return false;
+        } else {
+            return true;
+        }
+
     }
 }
