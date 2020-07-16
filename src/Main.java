@@ -36,8 +36,20 @@ public class Main {
         // Solution63 solution63 = new Solution63();
         // int s = solution63.uniquePathsWithObstacles(a);
         // System.out.print(s);
-        Solution20 solution20 = new Solution20();
+        // Solution20 solution20 = new Solution20();
         // solution20.isValid("{[]}");
-        System.out.println(solution20.isValid("}{"));
+        // System.out.println(solution20.isValid("}{"));
+        MinStack minStack=new MinStack();
+        minStack.push(2);
+        minStack.push(0);
+        minStack.push(3);
+        minStack.push(0);
+        System.out.println( minStack.top()+"min");
+        minStack.pop();
+        System.out.println( minStack.top()+"min");
+        minStack.pop();
+        System.out.println( minStack.top()+"min");
+        minStack.pop();
+        System.out.println( minStack.top()+"min");
     }
 }

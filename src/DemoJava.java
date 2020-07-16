@@ -211,6 +211,7 @@ class Solution20 {
         // （） 40 41 [] 91 93 {} 123 125
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
+            if(linkedList.size()>s.length()-i) return false;
             switch (c) {
                 case 41: {
                     if (linkedList.peekFirst()!=null&&c == linkedList.peekFirst() + 1) {
