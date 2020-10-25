@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 /**
  * 这个项目用于联系LeetCode上的算法题，在正式的练习之前必须要将LeetCode题号和题干标清楚
  */
