@@ -3,6 +3,13 @@
  */
 public class Main {
     public static void main(String[] args) {
+        Solution09 solution09=new Solution09();
+        System.out.print(solution09.isPalindrome(1000030001));
+//        Solution01 solution01=new Solution01();
+//       int [] result= solution01.twoSum(new int[]{2, 7, 11, 15},18);
+//        for (int a:result){
+//            System.out.print(a);
+//        }
 //        Solution58 solution58 = new Solution58();
 //        int length = solution58.lengthOfLastWord("Hello World");
 //        System.out.print(length);
@@ -33,8 +40,8 @@ public class Main {
           int[][] a = {{0,1,0},{0,1,0}};
 //        int[][] a = {{1,0},{0,0}};
 //        int[][] a = {{0,1},{0,0},{0,0}};
-        Solution63 solution63 = new Solution63();
-        int s = solution63.uniquePathsWithObstacles(a);
-        System.out.print(s);
+//        Solution63 solution63 = new Solution63();
+//        int s = solution63.uniquePathsWithObstacles(a);
+//        System.out.print(s);
     }
 }
