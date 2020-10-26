@@ -32,6 +32,9 @@
  */
 class Solution {
     public TreeNode sortedListToBST(ListNode head) {
+        //使用先序遍历
+        //思路：
+        //1 root
         
     }
 }
