@@ -23,33 +23,18 @@ public class Main {
         // String s=solution60.getPermutation(n,k);
         // System.out.print(s);
 
-        // Solution62 solution62=new Solution62();
-        // int s=solution62.uniquePaths(51,9);
-        // System.out.print(s);
-        // int[][] a = {{0, 0, 0}, {0, 1, 0}, {0, 0, 0}};
-        // int[][] a = {{0, 0, 0}, {0, 1, 0}};
-        // int[][] a = {{0}};
-        // int[][] a = {{1}};
-        int[][] a = { { 0, 1, 0 }, { 0, 1, 0 } };
-        // int[][] a = {{1,0},{0,0}};
-        // int[][] a = {{0,1},{0,0},{0,0}};
-        // Solution63 solution63 = new Solution63();
-        // int s = solution63.uniquePathsWithObstacles(a);
-        // System.out.print(s);
-        // Solution20 solution20 = new Solution20();
-        // solution20.isValid("{[]}");
-        // System.out.println(solution20.isValid("}{"));
-        MinStack minStack=new MinStack();
-        minStack.push(2);
-        minStack.push(0);
-        minStack.push(3);
-        minStack.push(0);
-        System.out.println( minStack.top()+"min");
-        minStack.pop();
-        System.out.println( minStack.top()+"min");
-        minStack.pop();
-        System.out.println( minStack.top()+"min");
-        minStack.pop();
-        System.out.println( minStack.top()+"min");
+//        Solution62 solution62=new Solution62();
+//        int s=solution62.uniquePaths(51,9);
+//        System.out.print(s);
+//        int[][] a = {{0, 0, 0}, {0, 1, 0}, {0, 0, 0}};
+//        int[][] a = {{0, 0, 0}, {0, 1, 0}};
+//        int[][] a = {{0}};
+//        int[][] a = {{1}};
+          int[][] a = {{0,1,0},{0,1,0}};
+//        int[][] a = {{1,0},{0,0}};
+//        int[][] a = {{0,1},{0,0},{0,0}};
+//        Solution63 solution63 = new Solution63();
+//        int s = solution63.uniquePathsWithObstacles(a);
+//        System.out.print(s);
     }
 }
