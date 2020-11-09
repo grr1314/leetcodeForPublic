@@ -26,7 +26,7 @@ class Solution {
             int m = (start + end) / 2;
             if (nums[m] == target)
                 return m;
-            if (nums[0] < nums[m]) {// 有序的一侧
+            if (nums[0] <= nums[m]) {// 有序的一侧
                 if (nums[0] <= target && target < nums[m]) {
                     end = m - 1;
                 } else {
